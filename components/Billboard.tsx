@@ -1,13 +1,18 @@
 import useBillboard from '@/hooks/useBillboard';
-import React from 'react';
+import React, {useCallback} from 'react';
 import PlayButton from './PlayButton';
 import { useRouter } from 'next/router';
 import { BsFillPlayFill } from 'react-icons/bs';
+import useInfoModalStore from '@/hooks/useInfoModalStore';
 
 
 const Billboard = () => {
     const { data } = useBillboard();
+    const { openModal } = useInfoModalStore();
     const router = useRouter();
+    const handleOpenModal = useCallback(() => {
+       openModal(data?.id);
+    }, [openModal, data?.id]);
     return (
         <div className='relative h-[56.25vw]'>
             <video className='
@@ -51,6 +56,7 @@ const Billboard = () => {
                 >
                     <PlayButton  movieId={data?.id}/>
                     <button 
+                    onClick={handleOpenModal}
                     className=' 
                         bg-white
                         text-white

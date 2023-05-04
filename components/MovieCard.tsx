@@ -1,8 +1,9 @@
 import React, { use } from 'react';
 import { useRouter } from 'next/router';
 
-import { BsFillPlayFill } from 'react-icons/bs';
+import { BsFillPlayFill, BsChevronDown  } from 'react-icons/bs';
 import FavoriteButton from './FavoriteButton';
+import useInfoModalStore from '@/hooks/useInfoModalStore';
 
 interface MovieCardProps {
 
@@ -13,6 +14,7 @@ const MovieCard: React.FC <MovieCardProps> = ({
     data
 }) => {
     const router = useRouter();
+    const {openModal} = useInfoModalStore();
 
     return (
         <div className='group bg-zinc-900 col-span relative h-[12vw]'>
@@ -97,6 +99,12 @@ const MovieCard: React.FC <MovieCardProps> = ({
                 <BsFillPlayFill size={30} />
                 </div>
                 <FavoriteButton movieId={data?.id}/>
+                <div onClick={() => openModal(data?.id)} 
+                className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300">
+                <BsChevronDown 
+                
+                className='text-white group-hober/item:text-neutral-300' />
+                </div>
             </div>
 
 
