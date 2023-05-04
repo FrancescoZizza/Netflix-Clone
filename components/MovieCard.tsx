@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { BsFillPlayFill, BsChevronDown  } from 'react-icons/bs';
 import FavoriteButton from './FavoriteButton';
 import useInfoModalStore from '@/hooks/useInfoModalStore';
+import Image from 'next/image';
 
 interface MovieCardProps {
 
@@ -18,7 +19,7 @@ const MovieCard: React.FC <MovieCardProps> = ({
 
     return (
         <div className='group bg-zinc-900 col-span relative h-[12vw]'>
-           <img
+           <Image
             className="
                 cursor-pointer 
                 object-cover
@@ -53,7 +54,7 @@ const MovieCard: React.FC <MovieCardProps> = ({
              "
            >
 
-            <img 
+            <Image 
             className='
             cursor-pointer
             object-cover
