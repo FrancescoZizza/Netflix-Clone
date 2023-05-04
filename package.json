@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "vercel-build": "next build && prisma generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -29,7 +30,6 @@
     "zustand": "^4.3.7"
   },
   "devDependencies": {
-    "vercel-build": "next build && prisma generate",
     "@types/bcrypt": "^5.0.0",
     "@types/lodash": "^4.14.194",
     "autoprefixer": "^10.4.14",
