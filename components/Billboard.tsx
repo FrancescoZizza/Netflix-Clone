@@ -1,9 +1,13 @@
 import useBillboard from '@/hooks/useBillboard';
 import React from 'react';
+import PlayButton from './PlayButton';
+import { useRouter } from 'next/router';
+import { BsFillPlayFill } from 'react-icons/bs';
+
 
 const Billboard = () => {
     const { data } = useBillboard();
-
+    const router = useRouter();
     return (
         <div className='relative h-[56.25vw]'>
             <video className='
@@ -43,8 +47,11 @@ const Billboard = () => {
                 '>
                     {data?.description}
                 </p>
-                <div className='flex flex-row items-center mt-3 md:mt-4 gap-3'>
-                    <button className=' 
+                <div className='flex flex-row items-center mt-3 md:mt-4 gap-3'
+                >
+                    <PlayButton  movieId={data?.id}/>
+                    <button 
+                    className=' 
                         bg-white
                         text-white
                         bg-opacity-30
@@ -60,6 +67,7 @@ const Billboard = () => {
                         hover:bg-opacity-20
                         
                     '>
+                    
                         More Info
                     </button>
                 </div>
