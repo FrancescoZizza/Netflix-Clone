@@ -9,6 +9,7 @@ import { FaGithub } from 'react-icons/fa';
 import Image from "next/image";
 
 
+
 const Auth = () => {
     const[email, setEmail] = useState('');
     const[name, setName] = useState('');
@@ -63,14 +64,15 @@ const Auth = () => {
                             {variant == 'login' ? 'Sign in' : 'Register'}
                         </h2>
                         <div className="flex flex-col gap-4">
-                            {variant == 'register' && (
-                            <Input 
-                                label="Username"
-                                onChange={(ev: any) => {setName(ev.target.value)}}
-                                id="name"
-                                value={name}
+                        {variant === 'register' && (
+                            <Input
+                            id="name"
+                            type="text"
+                            label="Username"
+                            value={name}
+                            onChange={(e: any) => setName(e.target.value)} 
                             />
-                            )}
+                              )}
                             <Input 
                                 label="Email"
                                 onChange={(ev: any) => {setEmail(ev.target.value)}}
