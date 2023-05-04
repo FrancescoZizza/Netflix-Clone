@@ -27,7 +27,7 @@ const Billboard = () => {
                 poster={data?.thumbnailUrl}
                 src={data?.videoUrl}>
             </video>
-            <div className='absolute top-[3%] sm:top-[20%] md:top-[40%] ml-4 md:ml-16'>
+            <div className='absolute top-[25%] sm:top-[20%] md:top-[40%] ml-4 md:ml-16'>
                 <p className='
                  text-white
                  text-1xl
